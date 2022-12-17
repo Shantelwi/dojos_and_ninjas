@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>New Ninja</title>
+        <link rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+            integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+            crossorigin="anonymous">
+    </head>
+    <body>
+        <form action="/create/ninja" method="POST" class=" col-4 bg-dark text-primary p-4 my-5 mx-auto">
+            <h1 class="text-center text-primary">New Ninja</h1>
+            <div class="form-group">
+                <label for="Dojo" class="text-primary">Dojo: </label>
+                <select name="dojo_id" class="form-control">
+                    {% for d in dojos %}
+                    <option value="{{ d.id }}">{{ d.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="first_name" class="text-primary">First Name:</label>
+                <input type="text" name="first_name" class="form-control" placeholder="First Name">
+            </div>
+            <div class="form-group">
+                <label for="last_name" class="text-primary">Last Name:</label>
+                <input type="text" name="last_name" class="form-control" placeholder="Last Name">
+            </div>
+            <div class="form-group">
+                <label for="age" class="text-primary" >Age:</label>
+                <input type="number" name="age" class="form-control" placeholder="age">
+            </div>
+            <input type="submit" value="Add a Ninja" class="btn btn-primary my-4">
+        </form> 
+            <a href="/" class="btn btn-primary">Home</a>
+    </body>
+</html>
